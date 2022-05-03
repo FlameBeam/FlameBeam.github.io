@@ -9,7 +9,7 @@
 # When your site is in a subdirectory, set to `/<name of directory>`,
 # with a leading `/` but no trailing `/`. Use the empty string '' otherwise.
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-# baseurl:               '/hydejack-starter-kit'
+# baseurl:               ''
 
 
 # General settings
@@ -17,19 +17,18 @@
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang:                  en
+lang:                  cn
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Jin Lee
+title:                 本本子
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:            >
-  42Seoul Cadet (21.04 ~ now)
-  Pursuing Bachelor's Degree in Electric Engineering
+  你好，这里是本本子的个人主页
 
 # A shorter description for the sidebar.
-tagline:               42Seoul Cadet (21.04 ~ now)
+tagline:               暂且没停止生命活动
 
 # A list of keywords for your blog
 keywords:              [C, Electric Engineering]
@@ -42,37 +41,41 @@ logo:                  /assets/img/logo.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                <Jin> <Lee>
-  email:               <42.4.jinwolee@gmail.com>
+  name:                小早川 本本子
+  email:               flamebeam0131@gmail.com
   # # Used by `jekyll-seo-tag`:
-  twitter:           <jinlee0108>
+  twitter:           flamebeam0131
+  sina-weibo:        flamebeam
+  steam:        FlameBeam
 
 # Add links to the sidebar.
 menu:
-  - title:             Blog
-    url:               /blog/
-  - title:             Projects
-    url:               /projects/
-  - title:             Résumé*
-    url:               /resume/
-  - title:             Documentation
-    url:               /docs/
+  # - title:             博客
+  #   url:               /blog/
+  # - title:             时间线
+  #   url:               /posts/
+  # - title:             标签
+  #   url:               /tags/
+  # - title:             其他
+  #   url:               /others/
+  - title:             任天堂社长问
+    url:               /others/interviews/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
 legal:
-  - title:             LICENSE
-    url:               /LICENSE/
-  - title:             NOTICE
-    url:               /NOTICE/
-  - title:             CHANGELOG
+  # - title:             LICENSE
+  #   url:               /LICENSE/
+  # - title:             NOTICE
+  #   url:               /NOTICE/
+  - title:             更新日志
     url:               /CHANGELOG/
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2021. All rights reserved.
-
+copyright:             © 2022. All rights reserved.
+timezone:              Asia/Shanghai
 # Format of the permalinks
-permalink:             /blog/:categories/:year-:month-:day-:title/
+permalink:             /blog/:slug/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
@@ -294,7 +297,7 @@ hydejack:
 
 collections:
   featured_categories:
-    permalink:         /blog/:name/
+    permalink:         /blog/:slug/
     output:            true
 
   featured_tags:
@@ -367,8 +370,8 @@ plugins:
 # social:
 #   name:                <firstname> <lastname>
 #   links:
-#     - https://twitter.com/<username>
-#     - https://github.com/<username>
+#     - https://twitter.com/flamebeam0131
+#     - https://github.com/FlameBeam
 
 
 # Plugin Configs

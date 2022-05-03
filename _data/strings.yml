@@ -10,38 +10,38 @@
 
 # Free version
 # ---------------------------------------------------------------------------------------
-home:                  Home
+home:                  主页
 pages:                 Pages
-posts:                 Posts
-about:                 About
-related_posts:         Related Posts
-other_projects:        Other Projects
-comments:              Comments
-jump_to:               Jump to
+posts:                 帖子
+about:                 关于
+related_posts:         相关帖子
+other_projects:        其他项目
+comments:              注释
+jump_to:               跳转至
 navigation:            Navigation
-social:                Social
-links:                 Links
+social:                社交
+links:                 链接
 links_icon:            'icon-link'
 pagination:            Pagination
-newer:                 Newer
-older:                 Older
-forward:               Forward
-back:                  Back
+newer:                 上一页
+older:                 下一页
+forward:               前进
+back:                  返回
 permalink:             Permalink
 permalink_icon:        'content-hash'
 templates:             Templates (for web app)
 present:               present
-toc:                   Table of Contents
+toc:                   目录
 note:                  Note
-description:           Description
-search:                Search
-search_placeholder:    Type something…
+description:           简介
+search:                搜索
+search_placeholder:    请输入...
 
-loading:               Loading…
-redirecting:           Redirecting…
+loading:               读取中...
+redirecting:           重定向...
 
 continue_reading:      >
-  Continue reading <!--post_title-->
+  阅读 <!--post_title-->
 
 cookies_banner:
   text:                >
@@ -49,18 +49,18 @@ cookies_banner:
   okay:                Okay
 
 not_found:
-  title:               '404: Page Not Found'
+  title:               '404: 没这个页面哦～'
   message:             |
-    Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
-    <!--home_link--> to try finding it again.
-  home_link:           Head back home
+    这儿什么也没有。要不检查一下链接是否出错了？
+    不如点击这里<!--home_link-->吧！
+  home_link:           返回首页
 
 offline:
-  title:               'You are Offline'
+  title:               '好像掉线了'
   message:             |
-    Sorry, but you appear to be offline and this page has not been prepared for offline viewing.
-    <!--home_link--> to try finding another page.
-  home_link:           Head back home
+    你丫网炸了吧？快检查下自己路由器或者话费余额吧！
+    点击这里<!--home_link-->！
+  home_link:           返回首页
 
 error:
   title:               Error
@@ -74,7 +74,7 @@ last_modified_at:      'Last modified at'
 last_modified_at_icon: 'icon-history'
 colon:                 ':'
 separator:             '|'
-category_start:        'in '
+category_start:        '  '
 category_spearator:    ' / '
 tag_start:             'on '
 tag_separator:         ', '
@@ -85,16 +85,16 @@ breadcrumbs_separator: '/'
 # Date formats
 # ---------------------------------------------------------------------------------------
 date_formats:
-  post:                '%d %b %Y'
-  last_modified_at:    '%Y-%m-%d'
-  related_post:        '%d %b %Y'
+  post:                '%Y年%-m月%-d日'
+  last_modified_at:    '%Y年%-m月%-d日'
+  related_post:        '%Y年%-m月%-d日'
   list_group_by:       '%Y'
   list_entry:          '%d %b'
   project:             '%Y'
   projects_group_by:   '%Y'
   resume:              '%b %Y'
 
-
+# 如果要将时间精确到小时:分钟，可在年月日后加上一个“%R”
 # PRO Version
 # ---------------------------------------------------------------------------------------
 # If you don't own the PRO version of Hydejack, modifying these will have no effect.

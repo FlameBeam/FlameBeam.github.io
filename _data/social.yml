@@ -52,6 +52,7 @@ renren:
 sina-weibo:
   name: Sina Weibo
   icon: icon-sina-weibo
+  prepend: "https://weibo.com/"
 rss:
   name: RSS
   icon: icon-rss2
@@ -94,7 +95,7 @@ deviantart:
 steam:
   name: Steam
   icon: icon-steam
-  prepend: "http://steamcommunity.com/profiles/"
+  prepend: "http://steamcommunity.com/id/"
 dropbox:
   name: Dropbox
   icon: icon-dropbox

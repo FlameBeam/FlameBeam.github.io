@@ -10,18 +10,20 @@
       {% unless no_link_title %}<a href="{{ post.url | relative_url }}" class="flip-title">{% endunless %}
         {{ post.title }}
       {% unless no_link_title %}</a>{% endunless %}
+
     </h1>
+
 
     <div class="post-date">
       {% capture foobar %}
         {%- unless site.hydejack.hide_dates -%}
-          {%- assign post_format = site.data.strings.date_formats.post | default:"%d %b %Y" -%}
+          {%- assign post_format = site.data.strings.date_formats.post | default:"%Y年%-m月%-d日" -%}
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date:post_format }}</time>
         {%- else -%}
           {{- site.data.strings.posted | default:"Posted" -}}
         {%- endunless -%}
         {{ ' ' }}
-        {%- assign category_start     = site.data.strings.category_start     | default:"in " -%}
+        {%- assign category_start     = site.data.strings.category_start     | default:"  " -%}
         {%- assign category_separator = site.data.strings.category_separator | default:" / " -%}
         {%- include components/tag-list.html tags=post.categories meta=site.featured_categories start_with=category_start separator=category_separator -%}
         {{ ' ' }}
@@ -34,11 +36,11 @@
       </span>
       {% unless site.hydejack.hide_dates or site.hydejack.hide_last_modified or post.hide_last_modified %}
         {% if post.last_modified_at %}
-          {% assign d1 = post.date             | date:"%Y-%m-%d" %}
-          {% assign d2 = post.last_modified_at | date:"%Y-%m-%d" %}
+          {% assign d1 = post.date             | date:"%Y年%-m月%-d日" %}
+          {% assign d2 = post.last_modified_at | date:"%Y年%-m月%-d日" %}
           {% if d1 != d2 %}
             {% assign label = site.data.strings.last_modified_at | default:"Last modified at" %}
-            {% assign last_modified_at_format = site.data.strings.date_formats.last_modified_at | default:"%Y-%m-%d" %}
+            {% assign last_modified_at_format = site.data.strings.date_formats.last_modified_at | default:"%Y年%-m月%-d日" %}
             <span class="ellipsis" data-tippy-content="{{ label }}{{ site.data.strings.colon }} {{ post.last_modified_at | date:last_modified_at_format }}">
               <span class="sr-only">{{ label }}{{ site.data.strings.colon }}</span>
               <span class="{{ site.data.strings.last_modified_icon | default:'icon-history' }}"></span>
@@ -46,6 +48,22 @@
             </span>
           {% endif %}
         {% endif %}
+
+       <!--  显示阅读时间 -->
+    {% assign words_per_minute = 250 %}
+    {% assign words = post.content | strip_html | strip_newlines | size %}
+    <span class="page_meta-readtime">
+      {% if words < words_per_minute %}
+        {{ '阅读约' }} 1 {{ '分钟' }}
+      {% elsif words == words_per_minute %}
+        {{ '阅读约' }} 1 {{ '分钟' }}
+      {% else %}
+        {{ '阅读约' }} {{ words | divided_by: words_per_minute }} {{ '分钟' }}
+      {% endif %}
+    </span>
+
+
+
       {% endunless %}
     </div>
 
@@ -62,13 +80,12 @@
     {% include components/message.html text=post.description hide=hide_description alt=alt %}
   </header>
 
-  {% if no_excerpt %}
+  {%if no_excerpt %}
     {{ post.content }}
   {% else %}
-    {{ post.excerpt }}
-
-    {% capture post_title %}<a class="heading flip-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>{% endcapture %}
-    {% assign text = site.data.strings.continue_reading | default:"Continue reading <!--post_title-->" %}
+<!--     {{ post.excerpt }}
+    {% capture post_title %}<a class="heading flip-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>{% endcapture %} -->
+    {% assign text = site.data.strings.continue_reading | default:"阅读 <!--post_title-->" %}
     <footer>
       <p class="read-more">
         {{ text | replace:"<!--post_title-->", post_title }}
